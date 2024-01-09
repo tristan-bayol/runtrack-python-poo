@@ -13,10 +13,10 @@ class Voiture :
         return self.__marque
     def set_marque (self, marque):
         self.marque = marque
-    def get_modèle (self):
+    def get_modele(self):
         return self.__modele
-    def set_modele (self, modele):
-        self.modele = modele
+    def set_modele(self, modele):
+        self.__modele = modele
     def get_annee (self):
         return self.__annee
     def set_annee (self, année):
@@ -30,20 +30,24 @@ class Voiture :
 
     def demmarrer (self):
         if Voiture.__verifier_plein (self) > 5:
-            return self.en_marche == True
+            self.en_marche = True
+            return True
         else :
             print("Reservoir vide, veuillez faire le plein")
-    
+            return False
+        
     def arreter (self):
-        return self.en_marche == False
+        self.en_marche = False
     
     def __verifier_plein (self):
         return self.__reservoir
 
 voiture = Voiture("BMW","Serie 1", 2011, 138000)
 print (voiture.get_marque())
-print(voiture.get_modèle())
+print(voiture.get_modele())
 print(voiture.get_annee())
 print(voiture.get_km())
 voiture.demmarrer()
+print (voiture.get_state())
+voiture.arreter()
 print (voiture.get_state())
