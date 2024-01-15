@@ -14,7 +14,7 @@ class Tache:
     def __str__(self):
         return f"Tâche: {self.titre}\nDescription: {self.desc}\nStatut: {self.infostask()}"
 
-# class ListDeTache :
+# class ListDeTache:
             
 manger = Tache("manger", "je dois manger")
 print (manger)
